@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package pair
 
 /**
@@ -286,4 +287,53 @@ object PositivePair2 {
     
     println()
     println("All validation tests completed!")
+=======
+class Pair[T](val first: T, val second: T){
+    // construtor primário
+
+   /* def setFirst(first: T) = { // não se utiliza por causa de estilo (verboso)
+        new Pair(first, this.second)
+    }
+
+    def setSecond(second: T) = {
+        new Pair(this.first, second)
+    }*/
+
+    def copy(first: T = this.first, second: T = this.second) =
+        new Pair(first, second)
+    
+    def name = "Pair"
+
+    //override def toString = s"Pair($first, $second)"
+    override def toString = s"$name($first, $second)"
+}
+
+class PositivePair(override val first: Int, override val second: Int)
+    extends Pair[Int](first, second) {
+        require(first>=0 && second >= 0, "Both values must be positive" )
+        override def name = "PositivePair"
+    }
+
+@main def run = {
+    val p1 = new Pair(1,2)
+    val p2 = new Pair("Hello", "World")
+
+    //val p3 = p1.setFirst(20)
+
+    val p3 = p1.copy(second = 20)
+    val p4 = p1.copy(first = 10)
+    val p5 = p1.copy(40,50)
+
+    println(p3)
+    println(p4)
+    println(p5)
+    println(p1)
+
+
+    val p6 = new PositivePair(5,6)
+    //val p7 = new PositivePair(-5,7)
+
+    println(p6)
+
+>>>>>>> 298ef51 (Aula Estrura de Dados - Classe)
 }

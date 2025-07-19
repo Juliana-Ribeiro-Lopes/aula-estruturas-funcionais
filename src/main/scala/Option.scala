@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package option 
 
 /**
@@ -175,3 +176,21 @@ def expression(x: Int, y: Int, z: Int): Option[Int] = {
     println(expression(10, 5, 2)) // Some(15) - Both divisions succeed (10/2 + 10/5 = 5 + 2 = 7)
     println(expression(10, 5, 0)) // None - First division fails (division by zero)
 }
+=======
+package option
+
+def divide (x: Int, y: Int): Option[Int] = {
+    if(y==0) None
+    else Some(x/y)
+}
+
+@main def run = {
+    println(divide(10,2))
+    println(divide(10,0))
+
+    val result = divide(10,0).getOrElse(0) + divide(8,2).getOrElse(0) // da erro de compilacao
+
+    println(result)
+}
+
+>>>>>>> 298ef51 (Aula Estrura de Dados - Classe)

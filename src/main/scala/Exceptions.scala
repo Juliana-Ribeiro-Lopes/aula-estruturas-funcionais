@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * COUNTER-EXAMPLE: Exception Handling in Scala (NOT Recommended for Functional Programming)
  * 
@@ -61,4 +62,20 @@ def divide(x: Int, y: Int): Int = {
   
   println("\nProgram continues after exception handling")
   println("Exception was handled, but this approach is NOT functional!")
+=======
+package exceptions
+
+def divide (x: Int, y: Int) =
+
+    if (y==0) throw new ArithmeticException("Divisao por zero")
+    else x/y
+
+@main def run = {
+    println(divide(10,2))
+    println(divide(10,0))
+
+    val result = divide(10,0) + divide(8,2) //so descobre o erro na hora da execucao
+
+    println(result)
+>>>>>>> 298ef51 (Aula Estrura de Dados - Classe)
 }
